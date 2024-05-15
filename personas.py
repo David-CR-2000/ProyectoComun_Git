@@ -6,7 +6,6 @@ class Persona:
         self.identificador = identificador
         self.activo = activo
         
-    
     def crear_cliente(self):
         pass
 
@@ -23,17 +22,37 @@ class Empleado:
     def __init__(self, nombre, apellido, desocupado, lista_de_tareas):
         self.nombre = nombre
         self.apellido = apellido
-        self.desocupado = desocupado
-        self.lista_de_tareas = lista_de_tareas
+        self.desocupado = []
+        self.lista_de_tareas = {}
 
     def registrar_empleado_cancha(self):
         pass
 
     def asignar_tarea_empleado(self):
-        pass
+        self.lista_de_tareas = {}
+        self.lista_de_tareas["Cambiar las redes"] = empleado.nombre
+        return self.lista_de_tareas        
 
     def listar_empleados(self):
-        pass
+        print("Introduce los datos de los empleados desocupados:")
+        self.nombre = input("Introduce el nombre: ")
+        self.desocupado.append(self.nombre)
+        return self.desocupado
 
     def quitar_empleados(self):
         pass
+
+
+cliente = Persona(
+    nombre= input("Introduce tu nombre: "),
+    apellido= input("Introduce tu apellido: "), 
+    telefono= int(input("Introduce tu numero de telefono: ")), 
+    identificador= None, 
+    activo=None)
+
+empleado = Empleado(
+    nombre= input("Introduce tu nombre: "), 
+    apellido= input("Introduce tu apellido: "), 
+    desocupado= [], 
+    lista_de_tareas={})   
+
