@@ -15,7 +15,6 @@ class Reserva:
 
 reservas = []
 
-
 def crear_reserva(lista, cliente, saldo, cancha):
     if saldo < -2000:
         print('No puede crear la reserva, no tiene suficiente saldo')
