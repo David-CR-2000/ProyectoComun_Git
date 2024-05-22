@@ -8,10 +8,6 @@ class Cancha:
         self.habilitada = habilitada
         self.reservas = []
         self.empleados = []
-    
-    
-    
-
 
 def cancha_disponible(canchas, num_cancha):
     for cancha in canchas:
