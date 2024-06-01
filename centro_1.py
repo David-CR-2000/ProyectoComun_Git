@@ -7,8 +7,8 @@ class Centro:
     def __init__(self, nombre, direccion, lista_canchas, lista_clientes):
         self.nombre = nombre
         self.direccion = direccion
-        self.lista_canchas = []
-        self.lista_clientes = []
+        self.lista_canchas = lista_canchas
+        self.lista_clientes = lista_clientes
 
 
 
