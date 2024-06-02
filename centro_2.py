@@ -22,7 +22,7 @@ def menu():
         print("2. Registrar cliente")
         print("3. Realizar reserva")
         print("4. Mostrar canchas")
-        print("5. Mostrar canchas disponibles")
+        print("5. Asignar tarea a empleados")
         # menu donde el usuario seleccionará lo que quiere hacer
         op = int(input("¿Que desea hacer? \n> "))
         match op:
@@ -30,16 +30,24 @@ def menu():
                 crear_cancha()
                 
             case 2:
-                crear_cliente()
-
+                clientes = crear_cliente(centro.lista_clientes)
+                print(clientes)
+                
+                
             case 3:
                 crear_reserva()
 
             case 4:
-                listar_canchas()
+                listar_canchas(centro.lista_canchas)
             
             case 5:
-                cancha_disponible()
+                asignar_tarea_empleado()
+
+            case 6:
+                pass
+
+            case 7:
+                break
 
 
 

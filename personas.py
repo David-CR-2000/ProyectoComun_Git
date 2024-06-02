@@ -1,5 +1,5 @@
 import random
-class Persona:
+class Cliente:
     def __init__(self, nombre, apellido, telefono, identificador, activo):
         self.nombre = nombre
         self.apellido = apellido
@@ -10,15 +10,7 @@ class Persona:
     def __str__(self):
         return f"Datos del cliente: {self.identificador} {self.nombre} {self.apellido} {self.telefono} {self.activo}"
           
-def agregar_cliente(nombre, apellido, telefono, id_cliente, activo):
-    clientes = []
-    clientes.append(id_cliente)
-    clientes.append(nombre)
-    clientes.append(apellido)
-    clientes.append(telefono)
-    activo = True #Ahora que agregamos al cliente ya podemos dar al cliente como activo
-    clientes.append(activo)
-    return clientes
+
 
 def quitar_cliente(nombre, apellido, telefono, id_cliente, activo):
     clientes = [nombre, apellido, telefono, id_cliente, activo]
@@ -42,15 +34,20 @@ def listar_clientes_morosos():
     morosos.append(telefono_moroso3)
     return morosos
 
-def crear_cliente():
+def crear_cliente(clientes):
     nombre = input("Introduzca su nombre: ")
     apellido = input("Introduzca su apellido: ")
     telefono = int(input("Introduzca su numero de telefono: "))
     id_cliente = random.randint(1,100)
-    activo = False #Este valor será False porque el cliente todavia no se le dió de alta a la lista de clientes
-    clientes = Persona(nombre, apellido, telefono, id_cliente, activo)
-    print(clientes)
-    return agregar_cliente(nombre, apellido, telefono, id_cliente, activo)
+    activo = True #Este valor será True porque estamos dando de alta a un cliente
+    clientes = Cliente(nombre, apellido, telefono, id_cliente, activo)
+    return clientes
+    
+    
+    
+   
+    
+    
 
 class Empleado:
     def __init__(self, nombre, apellido, desocupado, lista_de_tareas):
@@ -60,9 +57,12 @@ class Empleado:
         self.lista_de_tareas = lista_de_tareas
 
 def asignar_tarea_empleado(nombre, apellido, desocupado, lista_de_tareas):
+    nombre = input("Introduzca su nombre: ")
+    apellido = input("Introduzca su apellido: ")
+    tareas = input("Introduzca una tarea por hacer: ")
     lista_de_tareas = {}
-    desocupado = False
-    lista_de_tareas["Cambiar redes"] = nombre +" "+ apellido +" "+ desocupado
+    desocupado = input("si/no: ")
+    lista_de_tareas[tareas] = nombre +" "+ apellido +" "+ desocupado
     return lista_de_tareas
 
 
