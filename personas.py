@@ -1,11 +1,12 @@
 import random
 class Cliente:
-    def __init__(self, nombre, apellido, telefono, identificador, activo):
+    def __init__(self, nombre, apellido, telefono, identificador, activo, saldo):
         self.nombre = nombre
         self.apellido = apellido
         self.telefono = telefono
         self.identificador = identificador
         self.activo = activo
+        self.saldo = saldo
     
     def __str__(self):
         return f"Datos del cliente: {self.identificador} {self.nombre} {self.apellido} {self.telefono} {self.activo}"
@@ -40,7 +41,8 @@ def crear_cliente(clientes):
     telefono = int(input("Introduzca su numero de telefono: "))
     id_cliente = random.randint(1,100)
     activo = True #Este valor será True porque estamos dando de alta a un cliente
-    clientes = Cliente(nombre, apellido, telefono, id_cliente, activo)
+    saldo = 500
+    clientes = Cliente(nombre, apellido, telefono, id_cliente, activo, saldo)
     return clientes
     
     
