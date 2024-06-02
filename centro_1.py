@@ -16,8 +16,7 @@ cen = Centro('Arcipreste', 'calle_1', [], [])
 
 def menu():
     while True:
-
-        op = input('1. Agregar cancha\n2. Registrar cliente\n3. Realizar reserva\n4. Mostrar canchas segun el deporte\n7. Salir\nIntroduce una opcion: ')
+        op = input('\n\n1. Agregar cancha\n2. Registrar cliente\n3. Realizar reserva\n4. Mostrar canchas segun el deporte\n5. Eliminar una cancha\n6. \n7. Salir\nIntroduce una opcion: ')
         match op:
             case '1':
                 crear_cancha(cen.lista_canchas)
@@ -28,7 +27,7 @@ def menu():
             case '4':
                 listar_canchas(cen.lista_canchas)
             case '5':
-                pass
+                quitar_cancha(cen.lista_canchas)
             case '6':
                 pass
             case '7':
