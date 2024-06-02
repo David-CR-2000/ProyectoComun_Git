@@ -23,7 +23,7 @@ def menu():
         print("3. Realizar reserva")
         print("4. Mostrar canchas")
         print("5. Asignar tarea a empleados")
-        print("6.")
+        print("6. Mostrar reservas de un cliente")
         print("7. Salir")
         # menu donde el usuario seleccionará lo que quiere hacer
         op = int(input("¿Que desea hacer? \n> "))
@@ -46,7 +46,7 @@ def menu():
                 asignar_tarea_empleado()
 
             case 6:
-                pass
+                listar_reservas_cliente(reservas)
 
             case 7:
                 break
