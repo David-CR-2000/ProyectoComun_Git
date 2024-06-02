@@ -85,6 +85,6 @@ def registrar_empleado_cancha():
     apellido = input("Introduzca su apellido: ")
     desocupado = None
     lista_de_tareas = {}
-    empleado = Empleado(nombre, apellido, desocupado, lista_de_tareas)
-    print(empleado)
+    empleados = Empleado(nombre, apellido, desocupado, lista_de_tareas)
+    print(empleados)
     return listar_empleados(nombre, apellido, desocupado, lista_de_tareas)
