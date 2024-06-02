@@ -9,12 +9,14 @@ class Cancha:
         self.reservas = []
         self.empleados = []
 
+# Verificar si una cancha esta disponible
 def cancha_disponible(canchas, num_cancha):
     for cancha in canchas:
         if cancha.num_cancha == num_cancha:
             return False
     return True
 
+# Crear una cancha
 def crear_cancha(canchas):
     num_cancha = input('Introduce el numero de cancha: ')
     deporte = input('Introduce el deporte: ')
@@ -26,12 +28,14 @@ def crear_cancha(canchas):
     else:
         print("La cancha introducida ya existe")
 
+# Mostrar las canchas segun el deporte
 def listar_canchas(canchas):
     deporte = input('Introduce el deporte de las canchas que desea mostrar: ')
     for cancha in canchas:
         if cancha.deporte == deporte:
             print(f'Numero: {cancha.num_cancha}, deporte: {cancha.deporte}, precio:, habilitada: {cancha.habilitada}, reservas: {cancha.reservas}, empleados: {cancha.empleados}')
 
+# Eliminar una cancha
 def quitar_cancha(canchas):
     num = input('Introcuce el número de la cancha que desea quitar: ')
     for cancha in canchas:
