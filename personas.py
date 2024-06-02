@@ -1,3 +1,4 @@
+import random
 class Persona:
     def __init__(self, nombre, apellido, telefono, identificador, activo):
         self.nombre = nombre
@@ -5,16 +6,22 @@ class Persona:
         self.telefono = telefono
         self.identificador = identificador
         self.activo = activo
-        
-def agregar_cliente(nombre, apellido, telefono):
+    
+    def __str__(self):
+        return f"Datos del cliente: {self.identificador} {self.nombre} {self.apellido} {self.telefono} {self.activo}"
+          
+def agregar_cliente(nombre, apellido, telefono, id_cliente, activo):
     clientes = []
+    clientes.append(id_cliente)
     clientes.append(nombre)
     clientes.append(apellido)
     clientes.append(telefono)
+    activo = True #Ahora que agregamos al cliente ya podemos dar al cliente como activo
+    clientes.append(activo)
     return clientes
 
-def quitar_cliente(nombre, apellido, telefono):
-    clientes = [nombre, apellido, telefono]
+def quitar_cliente(nombre, apellido, telefono, id_cliente, activo):
+    clientes = [nombre, apellido, telefono, id_cliente, activo]
     del clientes
     return clientes
 
@@ -39,9 +46,11 @@ def crear_cliente():
     nombre = input("Introduzca su nombre: ")
     apellido = input("Introduzca su apellido: ")
     telefono = int(input("Introduzca su numero de telefono: "))
-    clientes = Persona(nombre, apellido, telefono)
+    id_cliente = random.randint(1,100)
+    activo = False #Este valor será False porque el cliente todavia no se le dió de alta a la lista de clientes
+    clientes = Persona(nombre, apellido, telefono, id_cliente, activo)
     print(clientes)
-    return agregar_cliente(nombre, apellido, telefono)
+    return agregar_cliente(nombre, apellido, telefono, id_cliente, activo)
 
 class Empleado:
     def __init__(self, nombre, apellido, desocupado, lista_de_tareas):
@@ -50,10 +59,11 @@ class Empleado:
         self.desocupado = desocupado
         self.lista_de_tareas = lista_de_tareas
 
-def asignar_tarea_empleado(nombre, apellido):
-    tareas = {}
-    tareas["Cambiar redes"] = nombre +" "+ apellido
-    return tareas
+def asignar_tarea_empleado(nombre, apellido, desocupado, lista_de_tareas):
+    lista_de_tareas = {}
+    desocupado = False
+    lista_de_tareas["Cambiar redes"] = nombre +" "+ apellido +" "+ desocupado
+    return lista_de_tareas
 
 
 def listar_empleados(nombre, apellido):
@@ -71,6 +81,8 @@ def quitar_empleados(nombre, apellido):
 def registrar_empleado_cancha():
     nombre = input("Introduzca su nombre: ")
     apellido = input("Introduzca su apellido: ")
-    empleado = Empleado(nombre, apellido)
+    desocupado = None
+    lista_de_tareas = {}
+    empleado = Empleado(nombre, apellido, desocupado, lista_de_tareas)
     print(empleado)
-    return listar_empleados(nombre, apellido)
+    return listar_empleados(nombre, apellido, desocupado, lista_de_tareas)
