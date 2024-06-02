@@ -18,7 +18,7 @@ def quitar_cliente(nombre, apellido, telefono, id_cliente, activo):
     return clientes
 
 def listar_clientes_morosos():
-    print("Clientes morosos")
+    print("Clientes morosos:")
     morosos = []
     nombre_moroso1, nombre_moroso2, nombre_moroso3 = "Fernando", "Pablo", "Andrés"
     apellido_moroso1, apellido_moroso2, apellido_moroso3 = "Gonzalez", "García", "Gutierrez"
@@ -56,14 +56,14 @@ class Empleado:
         self.desocupado = desocupado
         self.lista_de_tareas = lista_de_tareas
 
-def asignar_tarea_empleado(nombre, apellido, desocupado, lista_de_tareas):
+def asignar_tarea_empleado():
     nombre = input("Introduzca su nombre: ")
     apellido = input("Introduzca su apellido: ")
     tareas = input("Introduzca una tarea por hacer: ")
     lista_de_tareas = {}
-    desocupado = input("si/no: ")
+    desocupado = input("¿Esta desocupado?: (si/no): ")
     lista_de_tareas[tareas] = nombre +" "+ apellido +" "+ desocupado
-    return lista_de_tareas
+    print(lista_de_tareas)
 
 
 def listar_empleados(nombre, apellido):
@@ -72,7 +72,9 @@ def listar_empleados(nombre, apellido):
     lista_empleados.append(apellido)
     return lista_empleados
 
-def quitar_empleados(nombre, apellido):
+def quitar_empleados():
+    nombre = input("Introduzca el nombre de empleado: ")
+    apellido = input("Introduzca el apellido de empleado: ")
     lista_empleados = [nombre, apellido]
     del lista_empleados
     return lista_empleados
